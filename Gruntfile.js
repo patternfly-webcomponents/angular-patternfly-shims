@@ -65,6 +65,12 @@ module.exports = function (grunt) {
           dest: 'docs',
           expand: true
         },
+        fonts: {
+          cwd: 'node_modules/patternfly-webcomponents/dist/',
+          src: ['fonts/*'],
+          dest: 'docs',
+          expand: true
+        },
         styles: {
           cwd: 'styles/',
           src: ['*.css', '!*.min.css'],
@@ -132,17 +138,21 @@ module.exports = function (grunt) {
             'lib/patternfly-bootstrap-treeview/src/js/bootstrap-treeview.js',
             'lib/c3/c3.js',
             'lib/d3/d3.js',
-            'lib/patternfly/dist/js/patternfly.js',
+            'lib/patternfly/dist/js/patternfly.min.js',
             'lib/angular/angular.js',
             'lib/angular-sanitize/angular-sanitize.js',
             'lib/angular-animate/angular-animate.js',
             'lib/angular-bootstrap/ui-bootstrap-tpls.js',
             'misc/angular-bootstrap-prettify.js',
             'lib/lodash/lodash.min.js',
+            'node_modules/webcomponentsjs/full.js',
+            'node_modules/patternfly-webcomponents/dist/js/patternfly.js',
             'dist/angular-patternfly.js'],
           html5Mode: false,
           template: 'grunt-ngdocs-index.tmpl',
-          styles: ['lib/patternfly/dist/css/patternfly.css', 'lib/patternfly/dist/css/patternfly-additions.css',
+          //styles: ['lib/patternfly/dist/css/patternfly.css', 'lib/patternfly/dist/css/patternfly-additions.css',
+          styles: ['lib/patternfly/dist/css/patternfly-additions.css',
+            'node_modules/patternfly-webcomponents/dist/css/patternfly.css',
             'dist/styles/angular-patternfly.css', 'misc/ng-docs.css', 'misc/examples.css']
         },
 
@@ -257,7 +267,7 @@ module.exports = function (grunt) {
       }
     });
 
-    grunt.registerTask('copymain', ['copy:docdata', 'copy:fa', 'copy:styles', 'copy:img']);
+    grunt.registerTask('copymain', ['copy:docdata', 'copy:fonts', 'copy:fa', 'copy:styles', 'copy:img']);
 
     // You can specify which modules to build as arguments of the build task.
     grunt.registerTask('build', 'Create bootstrap build files', function () {

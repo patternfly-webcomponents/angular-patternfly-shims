@@ -21,7 +21,8 @@
        <pf-inline-notification pf-notification-type="type"
                         pf-notification-header="header"
                         pf-notification-message="message"
-                        pf-notification-persistent="isPersistent">
+                        pf-notification-persistent="isPersistent"
+                        pf-notification-persistent-callback-fn="persistentCallbackFn">
        </pf-inline-notification>
 
        <form class="form-horizontal">
@@ -61,6 +62,8 @@
 
        $scope.header = 'Default Header.';
        $scope.message = 'Default Message.';
+       $scope.persistentCallbackFn = 'alert("Hello")';
+       //$scope.persistentCallbackFn = function() { alert("Hello") };
      });
    </file>
 
@@ -75,7 +78,8 @@ angular.module( 'patternfly.notification' ).directive('pfInlineNotification', fu
       'pfNotificationMessage': '=',
       'pfNotificationHeader': '=',
       'pfNotificationPersistent': '=',
-      'pfNotificationIndex': '='
+      'pfNotificationIndex': '=',
+      'pfNotificationPersistentCallbackFn': '='
     },
     restrict: 'E',
     templateUrl: 'notification/inline-notification.html'

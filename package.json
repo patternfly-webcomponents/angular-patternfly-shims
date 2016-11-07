@@ -13,7 +13,8 @@
     "angular-sanitize": "1.3.0 - 1.5.*",
     "angular-ui-bootstrap": "0.13.x",
     "lodash": "3.x",
-    "patternfly": "~3.13.0"
+    "patternfly": "~3.13.0",
+    "patternfly-webcomponents": "*"
   },
   "devDependencies": {
     "express": "3.4.4",
@@ -41,7 +42,8 @@
     "karma-junit-reporter": "0.2.2",
     "karma-ng-html2js-preprocessor": "~0.1",
     "karma-phantomjs-launcher": "0.1.4",
-    "matchdep": "0.3.0"
+    "matchdep": "0.3.0",
+    "webcomponentsjs": "^1.0.2"
   },
   "scripts": {
     "test": "grunt test"
