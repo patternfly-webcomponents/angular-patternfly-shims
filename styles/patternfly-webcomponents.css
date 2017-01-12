@@ -1,0 +1,18 @@
+pf-tooltip {
+  display: none;
+}
+
+pf-tab {
+  padding:15px;
+  display:block;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+pf-alert {
+  display: block;
+}
+
+pf-alert .hidden {
+  display: none;
+}

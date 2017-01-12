@@ -26,4 +26,4 @@ deploy:
   skip_cleanup: true
   on: # The branch and repo that triggered the build
     branch: master
-    condition: $TRAVIS_REPO_SLUG = "patternfly/angular-patternfly"
+    condition: $TRAVIS_REPO_SLUG = "patternfly/angular-patternfly-shims"
