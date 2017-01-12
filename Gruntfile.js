@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         },
         dist: {
           src: ['src/**/*.module.js', 'src/**/*.js', 'templates/*.js'],
-          dest: 'dist/angular-patternfly.js'
+          dest: 'dist/angular-patternfly.webcomponents.js'
         }
       },
       connect: {
@@ -140,20 +140,16 @@ module.exports = function (grunt) {
             'lib/d3/d3.js',
             'lib/patternfly/dist/js/patternfly.min.js',
             'lib/angular/angular.js',
-            'lib/angular-sanitize/angular-sanitize.js',
-            'lib/angular-animate/angular-animate.js',
-            'lib/angular-bootstrap/ui-bootstrap-tpls.js',
             'misc/angular-bootstrap-prettify.js',
-            'lib/lodash/lodash.min.js',
             'node_modules/webcomponentsjs/full.js',
             'node_modules/patternfly-webcomponents/dist/js/patternfly.js',
-            'dist/angular-patternfly.js'],
+            'dist/angular-patternfly.webcomponents.js'],
           html5Mode: false,
           template: 'grunt-ngdocs-index.tmpl',
           //styles: ['lib/patternfly/dist/css/patternfly.css', 'lib/patternfly/dist/css/patternfly-additions.css',
           styles: ['lib/patternfly/dist/css/patternfly-additions.css',
             'node_modules/patternfly-webcomponents/dist/css/patternfly.css',
-            'dist/styles/angular-patternfly.css', 'misc/ng-docs.css', 'misc/examples.css']
+            'dist/styles/patternfly-webcomponents.css', 'misc/ng-docs.css', 'misc/examples.css']
         },
 
         all: ['src/**/*.js']
@@ -170,61 +166,6 @@ module.exports = function (grunt) {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
           }
-        },
-        'patternfly.form': {
-          cwd: 'src/',
-          src: ['form/**/*.html'],
-          dest: 'templates/form.js'
-        },
-        'patternfly.navigation': {
-          cwd: 'src/',
-          src: ['navigation/**/*.html'],
-          dest: 'templates/navigation.js'
-        },
-        'patternfly.notification': {
-          cwd: 'src/',
-          src: ['notification/**/*.html'],
-          dest: 'templates/notification.js'
-        },
-        'patternfly.card': {
-          cwd: 'src/',
-          src: ['card/**/*.html'],
-          dest: 'templates/card.js'
-        },
-        'patternfly.charts': {
-          cwd: 'src/',
-          src: ['charts/**/*.html'],
-          dest: 'templates/charts.js'
-        },
-        'patternfly.filters': {
-          cwd: 'src/',
-          src: ['filters/**/*.html'],
-          dest: 'templates/filters.js'
-        },
-        'patternfly.modals': {
-          cwd: 'src/',
-          src: ['modals/**/*.html'],
-          dest: 'templates/modals.js'
-        },
-        'patternfly.sort': {
-          cwd: 'src/',
-          src: ['sort/**/*.html'],
-          dest: 'templates/sort.js'
-        },
-        'patternfly.toolbars': {
-          cwd: 'src/',
-          src: ['toolbars/**/*.html'],
-          dest: 'templates/toolbars.js'
-        },
-        'patternfly.views': {
-          cwd: 'src/',
-          src: ['views/**/*.html'],
-          dest: 'templates/views.js'
-        },
-        'patternfly.wizard': {
-          cwd: 'src/',
-          src: ['wizard/**/*.html'],
-          dest: 'templates/wizard.js'
         }
       },
       // ng-annotate tries to make the code safe for minification automatically
@@ -232,8 +173,8 @@ module.exports = function (grunt) {
       ngAnnotate: {
         dist: {
           files: [{
-            src: 'dist/angular-patternfly.js',
-            dest: 'dist/angular-patternfly.js'
+            src: 'dist/angular-patternfly.webcomponents.js',
+            dest: 'dist/angular-patternfly.webcomponents.js'
           }]
         }
       },
@@ -248,8 +189,8 @@ module.exports = function (grunt) {
         },
         build: {
           files: {},
-          src: 'dist/angular-patternfly.js',
-          dest: 'dist/angular-patternfly.min.js'
+          src: 'dist/angular-patternfly.webcomponents.js',
+          dest: 'dist/angular-patternfly.webcomponents.min.js'
         }
       },
       watch: {
@@ -287,7 +228,7 @@ module.exports = function (grunt) {
         concatSrc = 'src/**/*.js';
       }
 
-      grunt.task.run(['clean', 'lint', 'test', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify:build', 'cssmin', 'copymain', 'ngdocs', 'clean:templates']);
+      grunt.task.run(['clean', 'lint', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify:build', 'cssmin', 'copymain', 'ngdocs', 'clean:templates']);
     });
 
     // Runs all the tasks of build with the exception of tests

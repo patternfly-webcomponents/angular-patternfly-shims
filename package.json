@@ -1,20 +1,17 @@
 {
   "author": "Red Hat",
-  "name": "angular-patternfly",
+  "name": "angular-patternfly-shims",
   "version": "3.13.0",
   "license": "Apache-2.0",
-  "description": "Angular extension of the PatternFly project.",
-  "keywords": ["angular", "patternfly"],
+  "description": "Angular Web Component extension of the PatternFly project.",
+  "keywords": ["angular", "patternfly", "webcomponents"],
   "main": "index.js",
   "homepage": "https://github.com/patternfly/angular-patternfly",
   "dependencies": {
     "angular": "1.3.0 - 1.5.*",
-    "angular-animate": "1.3.0 - 1.5.*",
-    "angular-sanitize": "1.3.0 - 1.5.*",
-    "angular-ui-bootstrap": "0.13.x",
-    "lodash": "3.x",
     "patternfly": "~3.13.0",
-    "patternfly-webcomponents": "*"
+    "patternfly-webcomponents": "*",
+    "webcomponentsjs": "^1.0.2"
   },
   "devDependencies": {
     "express": "3.4.4",
@@ -42,8 +39,7 @@
     "karma-junit-reporter": "0.2.2",
     "karma-ng-html2js-preprocessor": "~0.1",
     "karma-phantomjs-launcher": "0.1.4",
-    "matchdep": "0.3.0",
-    "webcomponentsjs": "^1.0.2"
+    "matchdep": "0.3.0"
   },
   "scripts": {
     "test": "grunt test"
